@@ -12,5 +12,5 @@ Or
 add variable CONFIG_FILE_URL
 
 ## ***Render***
-add variable PORT 80
+add variable PORT 80 and
 add variable CONFIG_FILE_URL
