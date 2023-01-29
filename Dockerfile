@@ -1,3 +1,3 @@
-FROM ghcr.io/anime-republic/reborn:latest
+FROM ghcr.io/anime-republic/wzml:latest
 COPY . .
 CMD ["bash", "start.sh"]
