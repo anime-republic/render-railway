@@ -15,6 +15,7 @@ basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     handlers=[FileHandler('log.txt'), StreamHandler()],
                     level=INFO)
 
+load_dotenv('config.env', override=True)
 
 CONFIG_FILE_URL = environ.get('CONFIG_FILE_URL')
 
@@ -33,10 +34,13 @@ with contextlib.suppress(Exception):
         log_error(f"CONFIG_FILE_URL: {e}")
 load_dotenv('config.env', override=True)
 
-with contextlib.suppress(Exception):
+try:
     if bool(environ.get('_____REMOVE_THIS_LINE_____')):
         log_error('The README.md file there to be read! Exiting now!')
         exit()
+except:
+    pass
+
 BOT_TOKEN = environ.get('BOT_TOKEN', '')
 if len(BOT_TOKEN) == 0:
     log_error("BOT_TOKEN variable is missing! Exiting now")
