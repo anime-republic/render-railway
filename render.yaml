@@ -6,7 +6,6 @@ services:
     repo: https://github.com/anime-republic/render-railway # optional
     region: oregon
     plan: free
-    healthCheckPath: /
     envVars:
       - key: PORT
         value: 80
