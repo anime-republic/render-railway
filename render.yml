@@ -1,0 +1,24 @@
+services:
+  # A Docker web service
+  - type: web
+    name: anything
+    env: docker
+    repo: https://github.com/anime-republic/render-railway # optional
+    region: oregon
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 80
+      - key: BOT_TOKEN
+        sync: true
+      - key: DATABASE_URL
+        sync: true
+      - key: OWNER_ID
+        sync: true
+      - key: TELEGRAM_API
+        sync: true
+      - key: TELEGRAM_HASH
+        sync: true
+      - key: CONFIG_FILE_URL
+        sync: false
