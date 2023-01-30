@@ -11,20 +11,20 @@ services:
       - key: PORT
         value: 80
       - key: BOT_TOKEN
-        value:
-        sync: true
+        # value: BOT_TOKEN
+        sync: false
       - key: DATABASE_URL
-        value:
-        sync: true
+        # value: DATABASE_URL
+        sync: false
       - key: OWNER_ID
-        value:
-        sync: true
+        # value: OWNER_ID
+        sync: false
       - key: TELEGRAM_API
-        value:
-        sync: true
+        # value: TELEGRAM_API
+        sync: false
       - key: TELEGRAM_HASH
-        value:
-        sync: true
+        # value: TELEGRAM_HASH
+        sync: false
       - key: CONFIG_FILE_URL
-        value:
+        # value: CONFIG_FILE_URL
         sync: false
