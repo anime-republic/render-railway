@@ -25,6 +25,3 @@ services:
       - key: TELEGRAM_HASH
         # value: TELEGRAM_HASH
         sync: false
-      - key: CONFIG_FILE_URL
-        # value: CONFIG_FILE_URL
-        sync: false
