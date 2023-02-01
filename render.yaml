@@ -3,7 +3,6 @@ services:
   - type: web
     name: anything
     env: docker
-    repo: https://github.com/anime-republic/render-railway # optional
     region: Frankfurt
     plan: free
     envVars:
