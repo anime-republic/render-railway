@@ -4,6 +4,7 @@ services:
     name: anything
     env: docker
     region: Frankfurt
+    repo: https://github.com/anime-republic/render-railway
     plan: free
     envVars:
       - key: PORT
