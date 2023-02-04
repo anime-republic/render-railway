@@ -679,7 +679,7 @@ def load_config():
         srun(["pkill", "-9", "-f", "gunicorn"])
     else:
         srun(["pkill", "-9", "-f", "gunicorn"])
-        Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{PORT}", shell=True)
+        Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{PORT} --keep-alive 5", shell=True)
 
     config_dict.update({'AS_DOCUMENT': AS_DOCUMENT,
                         'AUTHORIZED_CHATS': AUTHORIZED_CHATS,
@@ -932,7 +932,7 @@ def edit_variable(update, context, omsg, key):
     elif key == 'PORT':
         value = int(value)
         srun(["pkill", "-9", "-f", "gunicorn"])
-        Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{value}", shell=True)
+        Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{value} --keep-alive 5", shell=True)
     elif key == 'EXTENSION_FILTER':
         fx = value.split()
         GLOBAL_EXTENSION_FILTER.clear()
@@ -1170,7 +1170,7 @@ def edit_bot_settings(update, context):
         elif data[2] == 'PORT':
             value = 80
             srun(["pkill", "-9", "-f", "gunicorn"])
-            Popen("gunicorn web.wserver:app --bind 0.0.0.0:80", shell=True)
+            Popen("gunicorn web.wserver:app --bind 0.0.0.0:80 --keep-alive 5", shell=True)
         elif data[2] == 'GDRIVE_ID':
             if DRIVES_NAMES and DRIVES_NAMES[0] == 'Main':
                 DRIVES_NAMES.pop(0)
