@@ -36,17 +36,12 @@ if len(DATABASE_URL) == 0:
 
 if DATABASE_URL is not None:
     conn = MongoClient(DATABASE_URL)
-    db = conn.mltb
+    db = conn.wzmlunion
     if config_dict := db.settings.config.find_one({'_id': bot_id}):  #retrun config dict (all env vars)
         environ['UPSTREAM_REPO'] = config_dict['UPSTREAM_REPO']
         environ['UPSTREAM_BRANCH'] = config_dict['UPSTREAM_BRANCH']
         environ['UPDATE_PACKAGES'] = config_dict.get('UPDATE_PACKAGES', 'False')
     conn.close()
-
-UPDATE_PACKAGES = environ.get('UPDATE_PACKAGES', 'False')
-if UPDATE_PACKAGES.lower() == 'true':
-    packages = [dist.project_name for dist in working_set]
-    scall("pip install " + ' '.join(packages), shell=True)
 
 UPSTREAM_REPO = environ.get('UPSTREAM_REPO', '')
 if len(UPSTREAM_REPO) == 0:
