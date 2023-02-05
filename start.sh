@@ -1,1 +1,1 @@
-python3 update.py && python3 -m bot
+python3 config.py && python3 update.py && python3 -m bot
