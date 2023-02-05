@@ -361,8 +361,7 @@ def load_config():
     if len(RSS_COMMAND) == 0:
         RSS_COMMAND = ''
 
-    PORT = environ.get('PORT', '')
-    PORT = 80 if len(PORT) == 0 else int(PORT)
+    PORT = environ.get('PORT', None)
 
     DRIVES_IDS.clear()
     DRIVES_NAMES.clear()

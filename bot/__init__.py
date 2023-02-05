@@ -657,11 +657,7 @@ if len(WALLCRAFT_CATEGORY) == 0:
 PICS = environ.get('PICS', '')
 PICS = (PICS.replace("'", '').replace('"', '').replace('[', '').replace(']', '').replace(",", "")).split()
 
-PORT = environ.get('PORT', '')
-if len(PORT) == 0:
-    PORT = 80
-else:
-    PORT = int(PORT)
+PORT = environ.get('PORT', None)
 
 YT_DLP_QUALITY = environ.get('YT_DLP_QUALITY', '')
 if len(YT_DLP_QUALITY) == 0:
