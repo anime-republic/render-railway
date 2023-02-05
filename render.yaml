@@ -24,4 +24,5 @@ services:
         # value: TELEGRAM_HASH
         sync: false
       - key: BASE_URL
-        generateValue: true
+        # value: BASE_URL
+        sync: false
