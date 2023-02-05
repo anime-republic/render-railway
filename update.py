@@ -3,6 +3,7 @@ from os import path as ospath, environ, remove as osremove
 from subprocess import run as srun, call as scall
 from pkg_resources import working_set
 from requests import get as rget
+from dotenv import load_dotenv
 from pymongo import MongoClient
 
 if ospath.exists('log.txt'):
@@ -12,6 +13,8 @@ if ospath.exists('log.txt'):
 basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     handlers=[FileHandler('log.txt'), StreamHandler()],
                     level=INFO)
+
+load_dotenv('config.env', override=True)
 
 try:
     if bool(environ.get('_____REMOVE_THIS_LINE_____')):
