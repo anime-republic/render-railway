@@ -1,7 +1,6 @@
 from logging import FileHandler, StreamHandler, INFO, basicConfig, error as log_error
 from os import path as ospath, environ
 from requests import get as rget
-from dotenv import load_dotenv
 from sys import executable
 
 if ospath.exists('log.txt'):
@@ -27,5 +26,3 @@ try:
         log_error(f"CONFIG_FILE_URL: {e}")
 except:
     pass
-
-load_dotenv('config.env', override=True)
